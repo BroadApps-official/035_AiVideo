@@ -236,22 +236,21 @@ final class SubscriptionViewController: UIViewController {
         let products = purchaseManager.productsApphud
         let availableProductIds = products.map { $0.productId }
 
-        if let annualProduct = products.first(where: { $0.productId == "yearly_39.99_nottrial" }),
-           let skProduct = annualProduct.skProduct {
+        if let firstProduct = products.first, let skProduct = firstProduct.skProduct {
             let priceString = skProduct.price.stringValue
             let currencySymbol = skProduct.priceLocale.currencySymbol ?? ""
             annualView.updateDetails(title: "Annual", price: "\(currencySymbol)\(priceString)")
+            
             if let price = Double(priceString) {
                 let weeklyPrice = price / 52.0
-                let weeklyText = String(format: "\(currencySymbol)%.2f per week", weeklyPrice)
+                let weeklyText = String(format: "\(currencySymbol)%.2f", weeklyPrice)
                 annualView.updateUnderTitleLabel(text: weeklyText)
             }
         } else {
             print("Annual sub not found.")
         }
 
-        if let weeklyProduct = products.first(where: { $0.productId == "week_4.99_nottrial" }),
-           let skProduct = weeklyProduct.skProduct {
+        if products.count > 1, let secondProduct = products[safe: 1], let skProduct = secondProduct.skProduct {
             let priceString = skProduct.price.stringValue
             let currencySymbol = skProduct.priceLocale.currencySymbol ?? ""
             weeklyView.updateDetails(title: "Weekly", price: "\(currencySymbol)\(priceString)")
@@ -327,5 +326,11 @@ extension SubscriptionViewController: SFPrivacyDelegate {
         webViewViewController.view = webView
 
         present(webViewViewController, animated: true, completion: nil)
+    }
+}
+
+extension Array {
+    subscript(safe index: Index) -> Element? {
+        return index < count ? self[index] : nil
     }
 }

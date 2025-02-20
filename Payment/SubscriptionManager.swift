@@ -67,8 +67,8 @@ class SubscriptionManager: NSObject {
                     let name = product.skProduct?.localizedTitle ?? "No title"
                     let price = product.skProduct?.price.stringValue ?? "No price"
                     let period = product.skProduct?.subscriptionPeriod?.unit.rawValue == 0 ? "Неделя"
-                                : product.skProduct?.subscriptionPeriod?.unit.rawValue == 1 ? "Месяц"
-                                : "Год"
+                        : product.skProduct?.subscriptionPeriod?.unit.rawValue == 1 ? "Месяц"
+                        : "Год"
                 }
             } else {
                 print("Paywall \(self.paywallID) not found.")
