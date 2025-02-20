@@ -23,9 +23,8 @@
 		E70B0CD22D649DE600530DD0 /* AiEffectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B0CD12D649DE600530DD0 /* AiEffectsCell.swift */; };
 		E70B0CD42D65D73E00530DD0 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B0CD32D65D73E00530DD0 /* ExampleViewController.swift */; };
 		E70B0CD72D65FED700530DD0 /* CustomRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B0CD62D65FED700530DD0 /* CustomRateViewController.swift */; };
+		E70B0CDA2D677B2A00530DD0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E70B0CD92D677B2A00530DD0 /* SnapKit */; };
 		E70DE0022D2C13AF006749D8 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = E70DE0012D2C13AF006749D8 /* Siren */; };
-		E70DE0502D381864006749D8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E70DE04F2D381864006749D8 /* SnapKit */; };
-		E70DE0522D381864006749D8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E70DE0512D381864006749D8 /* SnapKit-Dynamic */; };
 		E70DE0552D3819B2006749D8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E70DE0542D3819B2006749D8 /* Lottie */; };
 		E71D00432CDC546E0011C8AF /* VideoSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D00422CDC546E0011C8AF /* VideoSaver.swift */; };
 		E71D00752CE3676C0011C8AF /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D00742CE3676C0011C8AF /* SubscriptionManager.swift */; };
@@ -147,10 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70DE0022D2C13AF006749D8 /* Siren in Frameworks */,
+				E70B0CDA2D677B2A00530DD0 /* SnapKit in Frameworks */,
 				E78D05022D133AF800A40CBB /* ApphudSDK in Frameworks */,
 				E70DE0552D3819B2006749D8 /* Lottie in Frameworks */,
-				E70DE0522D381864006749D8 /* SnapKit-Dynamic in Frameworks */,
-				E70DE0502D381864006749D8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,9 +468,8 @@
 			packageProductDependencies = (
 				E78D05012D133AF800A40CBB /* ApphudSDK */,
 				E70DE0012D2C13AF006749D8 /* Siren */,
-				E70DE04F2D381864006749D8 /* SnapKit */,
-				E70DE0512D381864006749D8 /* SnapKit-Dynamic */,
 				E70DE0542D3819B2006749D8 /* Lottie */,
+				E70B0CD92D677B2A00530DD0 /* SnapKit */,
 			);
 			productName = SportCoach;
 			productReference = E759BED72C1478D500FC2CCB /* AI Video.app */;
@@ -505,8 +502,8 @@
 			packageReferences = (
 				E78D05002D133AF800A40CBB /* XCRemoteSwiftPackageReference "ApphudSDK" */,
 				E70DE0002D2C13AF006749D8 /* XCRemoteSwiftPackageReference "Siren" */,
-				E70DE04E2D381864006749D8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E70DE0532D3819B2006749D8 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				E70B0CD82D677B2A00530DD0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = E759BED82C1478D500FC2CCB /* Products */;
 			projectDirPath = "";
@@ -834,20 +831,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E70B0CD82D677B2A00530DD0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		E70DE0002D2C13AF006749D8 /* XCRemoteSwiftPackageReference "Siren" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ArtSabintsev/Siren.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.1.3;
-			};
-		};
-		E70DE04E2D381864006749D8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
 			};
 		};
 		E70DE0532D3819B2006749D8 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
@@ -869,20 +866,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E70B0CD92D677B2A00530DD0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E70B0CD82D677B2A00530DD0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		E70DE0012D2C13AF006749D8 /* Siren */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E70DE0002D2C13AF006749D8 /* XCRemoteSwiftPackageReference "Siren" */;
 			productName = Siren;
-		};
-		E70DE04F2D381864006749D8 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E70DE04E2D381864006749D8 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		E70DE0512D381864006749D8 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E70DE04E2D381864006749D8 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		E70DE0542D3819B2006749D8 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
